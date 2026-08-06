@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxia de Amor - August 1st</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #05020a;
+            font-family: sans-serif;
+            color: #fff;
+        }
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .card-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(236, 72, 153, 0.4);
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            max-width: 90%;
+            width: 360px;
+            text-align: center;
+        }
+        h1 {
+            color: #f472b6;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #e2e8f0;
+            line-height: 1.8;
+            font-size: 14px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        .heart-icon {
+            color: #f43f5e;
+            font-size: 18px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    <div class="card-overlay">
+        <h1> HAPPY AUGUST 1st MEMORY </h1>
+        <p>
+            အရမ်းချစ်ရပါသောမမရေ မောင်တို့စပီးတွဲတဲ့နေ့ကနေ ခုချိန်ထိမောင်ဆိုးသမျှကိုသည်းခံပီးချစ်ပေးလို့ ကျေးဇူးတင်ပါတယ် နောင်လဲမောင်ဆိုးသမျှကိုသည်းခံပီးနားလည်ပေးပါနော် မကမောင့်ထက်အသက်၁နှစ်ကြီးမလဲ မောင့်အတွက်တော့မက ကလေးလေးတစ်ယောက်ပါ မောင်မကိုတစ်ရက်ထက်တစ်ရက်ပိုပီး ချစ်သွားပါမယ် မကိုအများကြီးချစ်တယ်နော် ကလေးလေးရေ ချစ်တုန်းလေးရေ ပူတူတူးလေးရေ ချစ်ဆုံးလေးရေ များကြီးချစ်တယ်နော်
+        </p>
+        <div class="heart-icon"> Forever & Always </div>
+    </div>
+    <script>
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(renderer.domElement);
+        const particlesCount = 5000;
+        const geometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(particlesCount * 3);
+        const colors = new Float32Array(particlesCount * 3);
+        const color1 = new THREE.Color("#ec4899");
+        const color2 = new THREE.Color("#8b5cf6");
+        for (let i = 0; i < particlesCount; i++) {
+            const radius = Math.random() * 8;
+            const spinAngle = radius * 3;
+            const branchAngle = ((i % 3) * 2 * Math.PI) / 3;
+            positions[i * 3] = Math.cos(branchAngle + spinAngle) * radius + (Math.random() - 0.5) * 0.5;
+            positions[i * 3 + 1] = (Math.random() - 0.5) * 0.5;
+            positions[i * 3 + 2] = Math.sin(branchAngle + spinAngle) * radius + (Math.random() - 0.5) * 0.5;
+            const mixedColor = color1.clone().lerp(color2, Math.random());
+            colors[i * 3] = mixedColor.r;
+            colors[i * 3 + 1] = mixedColor.g;
+            colors[i * 3 + 2] = mixedColor.b;
+        }
+        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+        const material = new THREE.PointsMaterial({ size: 0.035, vertexColors: true, transparent: true, opacity: 0.8 });
+        const points = new THREE.Points(geometry, material);
+        scene.add(points);
+        camera.position.z = 6;
+        camera.position.y = 3;
+        camera.lookAt(0, 0, 0);
+        function animate() {
+            requestAnimationFrame(animate);
+            points.rotation.y += 0.002;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>
