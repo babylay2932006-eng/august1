@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 11th Month Anniversary!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background Floating Hearts */
+        .heart-bg {
+            position: absolute;
+            color: rgba(255, 105, 180, 0.4);
+            animation: floatUp 6s linear infinite;
+            font-size: 20px;
+            z-index: 1;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 30px 20px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 90%;
+            max-width: 450px;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #ff75a0;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 117, 160, 0.5);
+        }
+
+        p.subtitle {
+            font-size: 14px;
+            color: #e0e1dd;
+            margin-bottom: 25px;
+        }
+
+        /* Timer Box */
+        .timer-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #f72585;
+            margin-bottom: 10px;
+        }
+
+        .timer-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 25px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px 5px;
+            border-radius: 12px;
+        }
+
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .time-box span {
+            font-size: 22px;
+            font-weight: bold;
+            color: #4cc9f0;
+        }
+
+        .time-box label {
+            font-size: 11px;
+            color: #a0aab2;
+            margin-top: 4px;
+        }
+
+        /* Interactive Heart */
+        .heart-btn {
+            font-size: 50px;
+            cursor: pointer;
+            display: inline-block;
+            margin: 15px 0;
+            animation: pulse 1.5s infinite;
+            transition: transform 0.3s;
+        }
+
+        .heart-btn:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        /* Message Box Popup */
+        .message-box {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            border-left: 4px solid #ff75a0;
+            text-align: justify;
+            font-size: 14px;
+            line-height: 1.6;
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .footer-text {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #8d99ae;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Happy 11th Month Anniversary! </h1>
+        <p class="subtitle">ငါတို့နှစ်ယောက် စတွဲခဲ့တဲ့နေ့လေးကစလို့...</p>
+
+        <div class="timer-title">Together For</div>
+        <div class="timer-container">
+            <div class="time-box">
+                <span id="days">0</span>
+                <label>Days</label>
+            </div>
+            <div class="time-box">
+                <span id="hours">0</span>
+                <label>Hours</label>
+            </div>
+            <div class="time-box">
+                <span id="minutes">0</span>
+                <label>Mins</label>
+            </div>
+            <div class="time-box">
+                <span id="seconds">0</span>
+                <label>Secs</label>
+            </div>
+        </div>
+
+        <p style="font-size: 13px; color: #ffb703;"> အသည်းလေးကို နှိပ်ကြည့်ပါဦး </p>
+        <div class="heart-btn" onclick="toggleMessage()"></div>
+
+        <div class="message-box" id="loveMessage">
+            ၁၅ ရက် ၉ လ ကနေ စခဲ့တဲ့ ငါတို့ရဲ့ အချစ်ရေးလေး အခုဆို (၁၁) လပြည့်ပြီနော်... <br><br>
+            ဒီအချိန်တွေအတွင်းမှာ အတူတူ ပျော်ခဲ့ရသလို၊ အဆင်မပြေတာလေးတွေရှိရင်လဲ နားလည်ပေးခဲ့လို့ ကျေးဇူးအများကြီးတင်ပါတယ် ချစ်ရပါသောမိန်းမရယ်။ ရှေ့ဆက်ပြီးတော့လဲ အများကြီး အကြာကြီး အတူတူလက်တွဲသွားကြမယ်နော်။ <br><br>
+            <b>I Love You So Much! </b>
+        </div>
+
+        <div class="footer-text">Forever & Always | 15.9.XXXX</div>
+    </div>
+
+    <script>
+        // စတွဲခဲ့သည့်နေ့ (၁၅ ရက် ၉ လ) - စတွဲခဲ့သည့် နှစ်ကို ဤနေရာတွင် ပြင်နိုင်ပါသည်
+        // ဥပမာ - 2023 သို့မဟုတ် 2024
+        const startDate = new Date('September 15, 2025 00:00:00').getTime();
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const difference = now - startDate;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // Message Toggle Function
+        function toggleMessage() {
+            const msg = document.getElementById('loveMessage');
+            if (msg.style.display === 'block') {
+                msg.style.display = 'none';
+            } else {
+                msg.style.display = 'block';
+            }
+        }
+
+        // Floating Hearts Effect
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-bg');
+            heart.innerHTML = '';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
