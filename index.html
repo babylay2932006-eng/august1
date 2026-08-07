@@ -51,7 +51,7 @@
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 22px;
             color: #ff75a0;
             margin-bottom: 10px;
             text-shadow: 0 0 10px rgba(255, 117, 160, 0.5);
@@ -75,7 +75,7 @@
         .timer-container {
             display: flex;
             justify-content: space-around;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             background: rgba(0, 0, 0, 0.2);
             padding: 15px 5px;
             border-radius: 12px;
@@ -99,30 +99,36 @@
             margin-top: 4px;
         }
 
-        /* Interactive Heart */
-        .heart-btn {
-            font-size: 50px;
+        /* Heart Button */
+        .love-btn {
+            background: linear-gradient(45deg, #ff4757, #ff6b81);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 30px;
             cursor: pointer;
-            display: inline-block;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
             margin: 15px 0;
-            animation: pulse 1.5s infinite;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            animation: pulse 1.8s infinite;
         }
 
-        .heart-btn:hover {
-            transform: scale(1.2);
+        .love-btn:active {
+            transform: scale(0.95);
         }
 
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.15); }
+            50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
 
         /* Message Box Popup */
         .message-box {
             display: none;
-            margin-top: 20px;
+            margin-top: 15px;
             padding: 15px;
             background: rgba(255, 255, 255, 0.15);
             border-radius: 12px;
@@ -148,7 +154,7 @@
 <body>
 
     <div class="container">
-        <h1>Happy 11th Month Anniversary! </h1>
+        <h1>Happy 11th Month Anniversary! ❤️</h1>
         <p class="subtitle">ငါတို့နှစ်ယောက် စတွဲခဲ့တဲ့နေ့လေးကစလို့...</p>
 
         <div class="timer-title">Together For</div>
@@ -171,22 +177,21 @@
             </div>
         </div>
 
-        <p style="font-size: 13px; color: #ffb703;"> အသည်းလေးကို နှိပ်ကြည့်ပါဦး </p>
-        <div class="heart-btn" onclick="toggleMessage()"></div>
+        <!-- Heart Button -->
+        <button class="love-btn" onclick="toggleMessage()">❤️ စာလွှာဖတ်ရန် နှိပ်ပါ ❤️</button>
 
         <div class="message-box" id="loveMessage">
-            ၁၅ ရက် ၉ လ ကနေ စခဲ့တဲ့ ငါတို့ရဲ့ အချစ်ရေးလေး အခုဆို (၁၁) လပြည့်ပြီနော်... <br><br>
+            ၁၅ ရက် ၉ လ ကနေ စခဲ့တဲ့ ငါတို့ရဲ့ အချစ်ရေးလေး အခုဆို (၁၁) လပြည့်ပြီနော်... 💕<br><br>
             ဒီအချိန်တွေအတွင်းမှာ အတူတူ ပျော်ခဲ့ရသလို၊ အဆင်မပြေတာလေးတွေရှိရင်လဲ နားလည်ပေးခဲ့လို့ ကျေးဇူးအများကြီးတင်ပါတယ် ချစ်ရပါသောမိန်းမရယ်။ ရှေ့ဆက်ပြီးတော့လဲ အများကြီး အကြာကြီး အတူတူလက်တွဲသွားကြမယ်နော်။ <br><br>
-            <b>I Love You So Much! </b>
+            <b>I Love You So Much! 💖✨</b>
         </div>
 
-        <div class="footer-text">Forever & Always | 15.9.XXXX</div>
+        <div class="footer-text">Forever & Always | 15.9.2023</div>
     </div>
 
     <script>
-        // စတွဲခဲ့သည့်နေ့ (၁၅ ရက် ၉ လ) - စတွဲခဲ့သည့် နှစ်ကို ဤနေရာတွင် ပြင်နိုင်ပါသည်
-        // ဥပမာ - 2023 သို့မဟုတ် 2024
-        const startDate = new Date('September 15, 2025 00:00:00').getTime();
+        // စတွဲခဲ့သည့်နေ့ (၁၅ ရက် ၉ လ ၂၀၂၃)
+        const startDate = new Date('September 15, 2023 00:00:00').getTime();
 
         function updateTimer() {
             const now = new Date().getTime();
@@ -220,7 +225,7 @@
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('heart-bg');
-            heart.innerHTML = '';
+            heart.innerHTML = '❤️';
             heart.style.left = Math.random() * 100 + 'vw';
             heart.style.animationDuration = Math.random() * 3 + 3 + 's';
             document.body.appendChild(heart);
