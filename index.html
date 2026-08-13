@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy 11th Month Anniversary!</title>
+    <title>Anniversary Love Quiz ❤️</title>
     <style>
         * {
             margin: 0;
@@ -19,223 +19,175 @@
             align-items: center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #ffffff;
-            overflow-x: hidden;
-            position: relative;
+            padding: 20px;
         }
 
-        /* Background Floating Hearts */
-        .heart-bg {
-            position: absolute;
-            color: rgba(255, 105, 180, 0.4);
-            animation: floatUp 6s linear infinite;
-            font-size: 20px;
-            z-index: 1;
-        }
-
-        @keyframes floatUp {
-            0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
-            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
-        }
-
-        .container {
+        .card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 30px 20px;
+            padding: 25px;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
             text-align: center;
-            width: 90%;
-            max-width: 450px;
-            z-index: 10;
+            width: 100%;
+            max-width: 420px;
         }
 
-        h1 {
-            font-size: 22px;
+        h2 {
             color: #ff75a0;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(255, 117, 160, 0.5);
+            font-size: 20px;
+            margin-bottom: 15px;
         }
 
-        p.subtitle {
-            font-size: 14px;
-            color: #e0e1dd;
-            margin-bottom: 25px;
-        }
-
-        /* Timer Box */
-        .timer-title {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #f72585;
-            margin-bottom: 10px;
-        }
-
-        .timer-container {
-            display: flex;
-            justify-content: space-around;
+        .question {
+            font-size: 16px;
             margin-bottom: 20px;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 15px 5px;
-            border-radius: 12px;
+            line-height: 1.5;
+            color: #f8f9fa;
         }
 
-        .time-box {
+        .btn-grid {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 12px;
         }
 
-        .time-box span {
-            font-size: 22px;
-            font-weight: bold;
-            color: #4cc9f0;
-        }
-
-        .time-box label {
-            font-size: 11px;
-            color: #a0aab2;
-            margin-top: 4px;
-        }
-
-        /* Heart Button */
-        .love-btn {
-            background: linear-gradient(45deg, #ff4757, #ff6b81);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 15px;
-            font-weight: bold;
-            border-radius: 30px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
-            margin: 15px 0;
-            transition: all 0.3s ease;
-            animation: pulse 1.8s infinite;
-        }
-
-        .love-btn:active {
-            transform: scale(0.95);
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* Message Box Popup */
-        .message-box {
-            display: none;
-            margin-top: 15px;
-            padding: 15px;
+        .option-btn {
             background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 15px;
             border-radius: 12px;
-            border-left: 4px solid #ff75a0;
-            text-align: justify;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-btn:hover {
+            background: #ff75a0;
+            border-color: #ff75a0;
+        }
+
+        .result-box {
+            display: none;
+            text-align: center;
+        }
+
+        .result-box h1 {
+            color: #ff4757;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .result-box p {
             font-size: 14px;
             line-height: 1.6;
-            animation: fadeIn 0.8s ease-in-out forwards;
+            color: #e0e1dd;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: justify;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .footer-text {
-            margin-top: 15px;
+        .progress {
             font-size: 12px;
-            color: #8d99ae;
+            color: #4cc9f0;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Happy 11th Month Anniversary! ❤️</h1>
-        <p class="subtitle">ငါတို့နှစ်ယောက် စတွဲခဲ့တဲ့နေ့လေးကစလို့...</p>
-
-        <div class="timer-title">Together For</div>
-        <div class="timer-container">
-            <div class="time-box">
-                <span id="days">0</span>
-                <label>Days</label>
-            </div>
-            <div class="time-box">
-                <span id="hours">0</span>
-                <label>Hours</label>
-            </div>
-            <div class="time-box">
-                <span id="minutes">0</span>
-                <label>Mins</label>
-            </div>
-            <div class="time-box">
-                <span id="seconds">0</span>
-                <label>Secs</label>
-            </div>
+    <div class="card" id="quizCard">
+        <div class="progress" id="progressText">Question 1 of 6</div>
+        <div class="question" id="questionText">မေးခွန်း တက်လာပါမည်...</div>
+        <div class="btn-grid" id="optionsContainer">
+            <!-- Buttons will be generated by JavaScript -->
         </div>
+    </div>
 
-        <!-- Heart Button -->
-        <button class="love-btn" onclick="toggleMessage()">❤️ စာလွှာဖတ်ရန် နှိပ်ပါ ❤️</button>
-
-        <div class="message-box" id="loveMessage">
-            ၁၅ ရက် ၉ လ ကနေ စခဲ့တဲ့ ငါတို့ရဲ့ အချစ်ရေးလေး အခုဆို (၁၁) လပြည့်ပြီနော်... 💕<br><br>
-            ဒီအချိန်တွေအတွင်းမှာ အတူတူ ပျော်ခဲ့ရသလို၊ အဆင်မပြေတာလေးတွေရှိရင်လဲ နားလည်ပေးခဲ့လို့ ကျေးဇူးအများကြီးတင်ပါတယ် ချစ်ရပါသောမိန်းမရယ်။ ရှေ့ဆက်ပြီးတော့လဲ အများကြီး အကြာကြီး အတူတူလက်တွဲသွားကြမယ်နော်။ <br><br>
+    <div class="card result-box" id="resultCard">
+        <h1>Happy 11th Month Anniversary! 💕</h1>
+        <p>
+            ၁၅ ရက် ၉ လ ကနေ စခဲ့တဲ့ ငါတို့ရဲ့ အချစ်ရေးလေး အခုဆို (၁၁) လပြည့်ပြီနော်... 🌸<br><br>
+            မေးခွန်းလေးတွေ အကုန်မှန်အောင် ဖြေနိုင်လို့ ကျေးဇူးပါ မိန်းမရယ်။ ဒီအချိန်တွေအတွင်းမှာ အတူတူ ပျော်ခဲ့ရသလို၊ အဆင်မပြေတာလေးတွေရှိရင်လဲ နားလည်ပေးခဲ့လို့ ကျေးဇူးအများကြီးတင်ပါတယ်။ <br><br>
+            နောက်ဆုံး မေးခွန်းမှာ ဖြေခဲ့သလိုပဲ ငါတို့နှစ်ယောက် အနာဂတ်မှာ အတူတူ လက်ထပ်ပြီး အကြာကြီး လက်တွဲသွားကြမယ်နော်။ <br><br>
             <b>I Love You So Much! 💖✨</b>
-        </div>
-
-        <div class="footer-text">Forever & Always | 15.9.2023</div>
+        </p>
     </div>
 
     <script>
-        // စတွဲခဲ့သည့်နေ့ (၁၅ ရက် ၉ လ ၂၀၂၃)
-        const startDate = new Date('September 15, 2023 00:00:00').getTime();
+        const quizData = [
+            {
+                question: "၁။ ငါတို့နှစ်ယောက် စတွဲခဲ့ကြတဲ့နေ့လေးက ဘယ်နေ့လဲ? 🗓️",
+                options: ["၁၅ ရက် ၈ လ", "၁၅ ရက် ၉ လ", "၁၆ ရက် ၉ လ", "၁၀ ရက် ၉ လ"],
+                correct: 1
+            },
+            {
+                question: "၂။ အခုဆိုရင် ငါတို့ အတူတူ ဖြတ်သန်းခဲ့တာ ဘာနေ့လေး ရောက်ပြီလဲ? 💖",
+                options: ["6 Months Anniversary", "1 Year Anniversary", "11 Months Anniversary", "10 Months Anniversary"],
+                correct: 2
+            },
+            {
+                question: "၃။ မင်း စိတ်ဆိုးရင်/ကောက်ရင် ငါ အဓိက လုပ်ပေးရမှာက ဘာလဲ? 🥺",
+                options: ["အကြောက်တရားနဲ့ ချော့ရမည်", "ပစ်ထားရမည်", "ပြန်ရန်ဖြစ်ရမည်", "မသိချင်ယောင် ဆောင်ရမည်"],
+                correct: 0
+            },
+            {
+                question: "၄။ ငါ့ကမ္ဘာမှာ အချစ်ရဆုံးနဲ့ အလှဆုံး ကောင်မလေးက ဘယ်သူလဲ? 👑",
+                options: ["နတ်သမီးလေး", "မင်း (မိန်းမ)", "သူများကောင်မလေး", "မသိပါဘူး"],
+                correct: 1
+            },
+            {
+                question: "၅။ ရှေ့ဆက်ပြီးတော့ရော ငါတို့နှစ်ယောက် ဘယ်လို သွားကြမလဲ? 👩‍❤️‍👨",
+                options: ["ခဏပဲ လက်တွဲမည်", "သေချာပေါက် အကြာကြီး လက်တွဲသွားမည်", "မသိတော့ဘူး", "လမ်းခွဲမည်"],
+                correct: 1
+            },
+            {
+                question: "၆။ နောက်ဆုံး မေးခွန်း... ငါတို့ အနာဂတ်မှာ အတူတူ လက်ထပ်ကြမှာလား? 💍✨",
+                options: ["လက်ထပ်မယ် ❤️", "မလက်ထပ်ဘူး 😜", "မသိသေးပါဘူး", "စဉ်းစားကြည့်ဦးမယ်"],
+                correct: 0
+            }
+        ];
 
-        function updateTimer() {
-            const now = new Date().getTime();
-            const difference = now - startDate;
+        let currentQuestion = 0;
 
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        function loadQuestion() {
+            const current = quizData[currentQuestion];
+            document.getElementById("progressText").innerText = `Question ${currentQuestion + 1} of ${quizData.length}`;
+            document.getElementById("questionText").innerText = current.question;
+            
+            const container = document.getElementById("optionsContainer");
+            container.innerHTML = "";
 
-            document.getElementById('days').innerText = days;
-            document.getElementById('hours').innerText = hours;
-            document.getElementById('minutes').innerText = minutes;
-            document.getElementById('seconds').innerText = seconds;
+            current.options.forEach((option, index) => {
+                const btn = document.createElement("button");
+                btn.classList.add("option-btn");
+                btn.innerText = option;
+                btn.onclick = () => checkAnswer(index);
+                container.appendChild(btn);
+            });
         }
 
-        setInterval(updateTimer, 1000);
-        updateTimer();
-
-        // Message Toggle Function
-        function toggleMessage() {
-            const msg = document.getElementById('loveMessage');
-            if (msg.style.display === 'block') {
-                msg.style.display = 'none';
+        function checkAnswer(selectedIndex) {
+            if (selectedIndex === quizData[currentQuestion].correct) {
+                alert("အဖြေမှန်တယ်နော်! တော်လိုက်တာ ချစ်ရပါသော မိန်းမရယ် ❤️");
+                currentQuestion++;
+                if (currentQuestion < quizData.length) {
+                    loadQuestion();
+                } else {
+                    document.getElementById("quizCard").style.display = "none";
+                    document.getElementById("resultCard").style.display = "block";
+                }
             } else {
-                msg.style.display = 'block';
+                alert("အဖြေမှားတယ်နော်! အသေအချာ ပြန်စဉ်းစားပြီး ဖြေပါဦး 😜");
             }
         }
 
-        // Floating Hearts Effect
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart-bg');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 3 + 's';
-            document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 6000);
-        }
-
-        setInterval(createHeart, 300);
+        loadQuestion();
     </script>
 </body>
 </html>
+            
