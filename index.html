@@ -106,6 +106,39 @@
             font-weight: bold;
         }
 
+        /* Custom Input Styles */
+        .custom-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ffb3c1;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 8px;
+            outline: none;
+        }
+        .custom-input:focus {
+            border-color: #ff4d6d;
+        }
+        .save-btn {
+            background: #ff758f;
+            color: white;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .saved-answer {
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: #e2f0d9;
+            border: 1px solid #b7ddb0;
+            color: #2e6b27;
+            border-radius: 6px;
+            font-weight: bold;
+            display: none;
+        }
+
         /* Page 3 Note Styles */
         .note-card {
             background: #fff;
@@ -166,15 +199,15 @@
         </div>
 
         <div class="quiz-card">
-            <div class="question">Q2: မင်းက မောင့်ထက် အသက်ကြီးပေမဲ့ မောင့်အတွက်တော့?</div>
-            <button class="option-btn" onclick="checkAns(this, true)">A) ကလေးလေးလို ဆိုးတတ်ပြီး အရမ်းချစ်ဖို့ကောင်းသူ</button>
-            <button class="option-btn" onclick="checkAns(this, false)">B) လူကြီးဆန်လွန်းသူ</button>
+            <div class="question">Q2: မောင်က မမအတွက်တော့?</div>
+            <button class="option-btn" onclick="checkAns(this, true)">A) အရမ်းချစ်ဖို့ကောင်းပြီး အမှီသဟဲပြုချင်စရာ မောင်လေး</button>
+            <button class="option-btn" onclick="checkAns(this, true)">B) ဘဝရဲ့ အဖော်မွန်နဲ့ အချစ်ဆုံးလေး</button>
         </div>
 
         <div class="quiz-card">
-            <div class="question">Q3: 15.9.2025 တုန်းက မောင့်ခံစားချက်?</div>
+            <div class="question">Q3: 15.9.2025 စတွဲတုန်းက မရဲ့ ခံစားချက်?</div>
             <button class="option-btn" onclick="checkAns(this, true)">A) ရင်တွေအရမ်းခုန်ပြီး အပျော်ဆုံးနေ့ဖြစ်ခဲ့တယ်</button>
-            <button class="option-btn" onclick="checkAns(this, false)">B) ရိုးရိုးရှင်းရှင်းပါပဲ</button>
+            <button class="option-btn" onclick="checkAns(this, true)">B) မောင့်ကို သံယောဇဉ်စတွယ်ခဲ့ရတဲ့ ပျော်စရာနေ့လေး</button>
         </div>
 
         <div class="quiz-card">
@@ -196,27 +229,31 @@
         </div>
 
         <div class="quiz-card">
-            <div class="question">Q7: ရန်ဖြစ်ရင် ဘယ်သူက အရင် စချော့လဲ?</div>
-            <button class="option-btn" onclick="checkAns(this, true)">A) မောင်ကပဲ အမြဲအရှုံးပေးပြီး ချော့တာ</button>
-            <button class="option-btn" onclick="checkAns(this, false)">B) ဘယ်သူမှမချော့ဘူး</button>
+            <div class="question">Q7: ရန်ဖြစ်ရင် ဘယ်သူက အရင် စချော့သင့်သလဲ? (မမ အဖြေရေးရန်)</div>
+            <input type="text" class="custom-input" id="inputQ7" placeholder="မမ အဖြေဒီမှာ ရေးပါနော်...">
+            <button class="save-btn" onclick="saveUserAns('inputQ7', 'ansQ7')">အဖြေသိမ်းမည် </button>
+            <div class="saved-answer" id="ansQ7"></div>
         </div>
 
         <div class="quiz-card">
-            <div class="question">Q8: မမဆီက မောင် အကြိုက်ဆုံး အပြုံး?</div>
-            <button class="option-btn" onclick="checkAns(this, true)">A) မောင့်ကိုကြည့်ပြီး ပြုံးပြတဲ့ အပြုံးတိုင်း</button>
-            <button class="option-btn" onclick="checkAns(this, false)">B) မဲ့ပြုံး</button>
+            <div class="question">Q8: မောင့်ဆီက အလိုချင်ဆုံး အရာကဘာလဲ? (မမ အဖြေရေးရန်)</div>
+            <input type="text" class="custom-input" id="inputQ8" placeholder="မမ အဖြေဒီမှာ ရေးပါနော်...">
+            <button class="save-btn" onclick="saveUserAns('inputQ8', 'ansQ8')">အဖြေသိမ်းမည် </button>
+            <div class="saved-answer" id="ansQ8"></div>
         </div>
 
         <div class="quiz-card">
-            <div class="question">Q9: ဒီ ၁ နှစ်တာအတွင်း အမှတ်တရဆုံး?</div>
-            <button class="option-btn" onclick="checkAns(this, true)">A) မမနဲ့အတူ ရှိခဲ့ရတဲ့ စက္ကန့်တိုင်း</button>
-            <button class="option-btn" onclick="checkAns(this, false)">B) မရှိပါဘူး</button>
+            <div class="question">Q9: ဒီ ၁ နှစ်တာအတွင်း အမှတ်တရဆုံး အချိန်? (မမ အဖြေရေးရန်)</div>
+            <input type="text" class="custom-input" id="inputQ9" placeholder="မမ အဖြေဒီမှာ ရေးပါနော်...">
+            <button class="save-btn" onclick="saveUserAns('inputQ9', 'ansQ9')">အဖြေသိမ်းမည် </button>
+            <div class="saved-answer" id="ansQ9"></div>
         </div>
 
         <div class="quiz-card">
-            <div class="question">Q10: မောင် မမကို ဘယ်လောက်ထိ ချစ်လဲ?</div>
-            <button class="option-btn" onclick="checkAns(this, true)">A) စကားလုံးတွေနဲ့ ဖော်ပြလို့ မရနိုင်အောင်ပါပဲ</button>
-            <button class="option-btn" onclick="checkAns(this, false)">B) နည်းနည်းလေးပါ</button>
+            <div class="question">Q10: မောင့်ကို ဘယ်လောက်ထိ ချစ်လဲ? (မမ အဖြေရေးရန်)</div>
+            <input type="text" class="custom-input" id="inputQ10" placeholder="မမ အဖြေဒီမှာ ရေးပါနော်...">
+            <button class="save-btn" onclick="saveUserAns('inputQ10', 'ansQ10')">အဖြေသိမ်းမည် </button>
+            <div class="saved-answer" id="ansQ10"></div>
         </div>
 
         <button class="btn" onclick="nextPage(3)">Note စာမျက်နှာသို့ သွားရန် </button>
@@ -280,6 +317,17 @@
         } else {
             element.style.backgroundColor = "#f8d7da";
             element.style.color = "#721c24";
+        }
+    }
+
+    function saveUserAns(inputId, ansBoxId) {
+        let val = document.getElementById(inputId).value;
+        let box = document.getElementById(ansBoxId);
+        if (val.trim() !== "") {
+            box.innerText = "မမရဲ့ အဖြေ: " + val;
+            box.style.display = "block";
+        } else {
+            alert("ကျေးဇူးပြု၍ အဖြေလေး ရိုက်ပေးပါနော် ");
         }
     }
 </script>
