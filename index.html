@@ -3,191 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anniversary Love Quiz ❤️</title>
+    <title>Happy 1st Anniversary My Love ❤️</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #ffffff;
+            background-color: #ffe6eb;
+            color: #4a4a4a;
+            text-align: center;
             padding: 20px;
+            margin: 0;
         }
-
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 25px;
+        .container {
+            max-width: 600px;
+            background: white;
+            margin: 0 auto;
+            padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            width: 100%;
-            max-width: 420px;
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3);
         }
-
-        h2 {
-            color: #ff75a0;
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        .question {
-            font-size: 16px;
-            margin-bottom: 20px;
-            line-height: 1.5;
-            color: #f8f9fa;
-        }
-
-        .btn-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .option-btn {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 12px 15px;
-            border-radius: 12px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .option-btn:hover {
-            background: #ff75a0;
-            border-color: #ff75a0;
-        }
-
-        .result-box {
-            display: none;
-            text-align: center;
-        }
-
-        .result-box h1 {
-            color: #ff4757;
+        .hearts {
+            color: #ff4d6d;
             font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .result-box p {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #e0e1dd;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 15px;
-            border-radius: 12px;
-            text-align: justify;
-        }
-
-        .progress {
-            font-size: 12px;
-            color: #4cc9f0;
             margin-bottom: 10px;
+        }
+        h1 {
+            color: #c9184a;
+            font-size: 26px;
+        }
+        .intro {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 25px;
+        }
+        .quiz-section {
+            text-align: left;
+            background: #fff0f5;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 5px solid #ff4d6d;
+        }
+        .question {
             font-weight: bold;
+            color: #a4133c;
+            margin-bottom: 5px;
+        }
+        .answer {
+            color: #555;
+            margin-top: 0;
+        }
+        .note-card {
+            background: #fff;
+            border: 2px dashed #ff758f;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: left;
+            line-height: 1.8;
+            color: #333;
+            box-shadow: inset 0 0 10px rgba(255, 182, 193, 0.5);
+        }
+        .note-card h2 {
+            text-align: center;
+            color: #c9184a;
+        }
+        .love-languages {
+            background: #fff5f7;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 20px;
+            border: 1px solid #ffb3c1;
+        }
+        .love-languages h3 {
+            color: #c9184a;
+            margin-top: 0;
+            text-align: center;
+        }
+        .lang-item {
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #ffccd5;
+        }
+        .lang-item:last-child {
+            border-bottom: none;
+        }
+        .lang-name {
+            font-weight: bold;
+            color: #a4133c;
+        }
+        .lang-text {
+            font-size: 16px;
+            color: #d90429;
+            font-weight: 500;
+        }
+        .lang-sub {
+            font-size: 13px;
+            color: #666;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
 
-    <div class="card" id="quizCard">
-        <div class="progress" id="progressText">Question 1 of 6</div>
-        <div class="question" id="questionText">မေးခွန်း တက်လာပါမည်...</div>
-        <div class="btn-grid" id="optionsContainer">
-            <!-- Buttons will be generated by JavaScript -->
+<div class="container">
+    <!-- Header Hearts -->
+    <div class="hearts">
+        💖 ✨ 💖 ✨ 💖 ✨ 💖 ✨ 💖<br>
+        💕 Happy 1st Anniversary 💕<br>
+        💖 ✨ 💖 ✨ 💖 ✨ 💖 ✨ 💖
+    </div>
+
+    <h1>1 Year Together</h1>
+    <p class="intro">15.9.2025 - Present ❤️</p>
+
+    <!-- Q&A Section -->
+    <div class="quiz-section">
+        <p class="question">Q1: တို့နှစ်ယောက် စတင်တွဲခဲ့တဲ့နေ့က ဘယ်နေ့လဲ?</p>
+        <p class="answer">A: 15.9.2025 ပါ နေ့တိုင်းသတိရနေတဲ့နေ့လေးပါ။</p>
+    </div>
+
+    <div class="quiz-section">
+        <p class="question">Q2: မင်းက မောင့်ထက် အသက်ကြီးတော့ ဘာတွေပိုကောင်းလဲ?</p>
+        <p class="answer">A: ရင့်ကျက်တယ်၊ ပိုပြီး ဂရုစိုက်ပေးနိုင်တယ်... ဒါပေမဲ့ မောင့်ရှေ့ရောက်ရင် ကလေးလေးလို ဆိုးတတ်တာလေးက အရမ်းချစ်ဖို့ကောင်းတယ်။ ❤️</p>
+    </div>
+
+    <div class="quiz-section">
+        <p class="question">Q3: တို့နှစ်ယောက် စတွဲခဲ့တဲ့ 15.9.2025 တုန်းက ခံစားချက်က ဘယ်လိုလဲ?</p>
+        <p class="answer">A: ရင်တွေအရမ်းခုန်ပြီး ဒီနေ့လေးကို ဘယ်တော့မှ မမေ့နိုင်တော့ဘူးဆိုတာ ချက်ချင်းသိလိုက်ရတဲ့နေ့လေးပါ။</p>
+    </div>
+
+    <div class="quiz-section">
+        <p class="question">Q4: မောင့်ထက် အသက်ကြီးတဲ့ ကောင်မလေးကို ပိုင်ဆိုင်ထားရတဲ့ မောင့်ရဲ့ ခံစားချက်?</p>
+        <p class="answer">A: ကမ္ဘာပေါ်မှာ အကံကောင်းဆုံးနဲ့ အပျော်ဆုံးလူတစ်ယောက် ဖြစ်သွားတာပေါ့။</p>
+    </div>
+
+    <div class="quiz-section">
+        <p class="question">Q5: မောင့်ရဲ့ စိတ်အရှုပ်ရဆုံး အကျင့်တစ်ခုက ဘာလဲ?</p>
+        <p class="answer">A: တစ်ခါတလေ ဂျီကျတာ/စိတ်တိုတတ်တာ (ဒါပေမဲ့ အမြဲသည်းခံပေးလို့ ကျေးဇူးပါနော်)</p>
+    </div>
+
+    <div class="quiz-section">
+        <p class="question">Q6: စတွဲတုန်းကနဲ့ ခုချိန်မှာ ပြောင်းလဲသွားတာ ဘာရှိလဲ?</p>
+        <p class="answer">A: ပိုပြီးတော့ အရမ်းချစ်လာတာတစ်ခုပါပဲ။</p>
+    </div>
+
+    <div class="quiz-section">
+        <p class="question">Q7: တို့နှစ်ယောက် ရန်ဖြစ်ရင် ဘယ်သူက အရင် စချော့လေ့ရှိလဲ?</p>
+        <p class="answer">A: မောင်ကပဲ အမြဲ အရှုံးပေးပြီး ချော့ရတာပါပဲ (မမကို မဆိုးစေချင်လို့ပါ)။</p>
+    </div>
+
+    <div class="quiz-section">
+        <p class="question">Q8: မမဆီက မောင် အကြိုက်ဆုံး အပြုံးလေးက ဘယ်အချိန်လဲ?</p>
+        <p class="answer">A: မောင့်ကိုကြည့်ပြီး ပြုံးပြတဲ့ စက္ကန့်တိုင်းပါ။</p>
+    </div>
+
+    <div class="quiz-section">
+        <p class="question">Q9: ဒီ ၁ နှစ်တာအတွင်းမှာ အမှတ်တရဆုံးအချိန်?</p>
+        <p class="answer">A: မမနဲ့အတူ ရှိခဲ့ရတဲ့ စက္ကန့်တိုင်းက အမှတ်တရပါပဲ။</p>
+    </div>
+
+    <div class="quiz-section">
+        <p class="question">Q10: မောင် မမကို ဘယ်လောက်ထိ ချစ်လဲ?</p>
+        <p class="answer">A: စကားလုံးတွေနဲ့ ဖော်ပြလို့ မရနိုင်အောင်ပါပဲ။ ❤️</p>
+    </div>
+
+    <!-- Long Note Section -->
+    <div class="note-card">
+        <h2>💌 Note For My Special One 💌</h2>
+        <p>
+            ချစ်ရတဲ့ မမ/ကောင်မလေးရေ...<br><br>
+            
+            ၁၅.၉.၂၀၂၅ ဆိုတဲ့ နေ့လေးကစပြီး မောင့်ရဲ့ ကမ္ဘာလေးထဲကို မင်းဝင်ရောက်လာခဲ့တာ ခုဆိုရင် ၁ နှစ်เต็ม ပြည့်သွားခဲ့ပြီနော်။ 
+            မောင့်ထက် အသက်ကြီးပေမဲ့လည်း မောင့်ရှေ့ရောက်ရင် ကလေးလေးတစ်ယောက်လို ဂျီကျတတ်၊ ဆိုးတတ်တာလေးတွေကအစ မောင့်အတွက်တော့ အရမ်းကို ချစ်ဖို့ကောင်းလွန်းလှပါတယ်။<br><br>
+
+            ဒီ ၁ နှစ်တာ ဖြတ်သန်းခဲ့တဲ့ နေ့ရက်တိုင်းမှာ မောင်တို့နှစ်ယောက် အတူတူ ပျော်ရွှင်ခဲ့ကြတဲ့ ရယ်မောစရာ အချိန်တွေရော၊ စိတ်ဆိုးစိတ်ကောက်ပြီး နားလည်မှုလွဲခဲ့ရတဲ့ နေ့ရက်တွေပါ ရှိခဲ့ကြတယ်။ ဒါပေမဲ့ ဘယ်လိုအခြေအနေမျိုးမှာမဆို မောင့်လက်ကို တင်းတင်းကြပ်ကြပ် ဆုပ်ကိုင်ထားပေးခဲ့လို့၊ မောင့်အပေါ် အမြဲတမ်း သည်းခံနားလည် ခွင့်လွှတ်ပေးခဲ့လို့ မမကို ကျေးဇူးအများကြီးတင်ပါတယ်နော်။ မင်းနဲ့အတူ ရှိနေရတဲ့ စက္ကန့်တိုင်းဟာ မောင့်ဘဝရဲ့ အဓိပ္ပာယ်အရှိဆုံးနဲ့ အပျော်ရွှင်ရဆုံး အချိန်တွေပါပဲ။<br><br>
+
+            မမဟာ မောင့်အတွက်တော့ ချစ်သူတစ်ယောက်တင် မဟုတ်ဘဲ ဘဝရဲ့ အဖော်မွန်၊ အားအင်တစ်ခုလည်း ဖြစ်ပါတယ်။ မောင် အဆင်မပြေတဲ့အခါတိုင်း ဘေးမှာရှိပေးခဲ့သလို၊ မောင့်ရဲ့ သေးငယ်တဲ့ ပျော်ရွှင်မှုလေးတွေကိုလည်း ပိုပြီး ကြီးမြတ်သွားအောင် ဖန်တီးပေးခဲ့သူပါ။ မမရဲ့ အပြုံးလေးတစ်ခုဟာ မောင့်ရဲ့ မောပန်းသမျှကို ပျောက်ကွယ်သွားစေနိုင်တဲ့အထိ တန်ခိုးကြီးလွန်းပါတယ်။<br><br>
+
+            ရှေ့ဆက်ရမယ့် နှစ်ပေါင်းများစွာမှာလည်း မောင်တို့နှစ်ယောက် သံယောဇဉ်တွေ ဒီထက်မက ပိုပြီး ခိုင်မာစွာနဲ့ အတူတူ လက်တွဲလျှောက်လှမ်းသွားကြမယ်နော်။ ဘာပဲဖြစ်ဖြစ် မမရဲ့ဘေးမှာ မောင် အမြဲတမ်း အခိုင်မာဆုံး ဒေါက်တိုင်တစ်ခုအဖြစ် ရှိနေပေးမှာမို့လို့ စိတ်အေးအေးနဲ့ စိတ်ချထားပါ။ အမြဲတမ်း ကျန်းမာရေး ဂရုစိုက်ပြီး ပျော်ပျော်ရွှင်ရွှင်နဲ့ စိတ်ချမ်းသာစွာ ပြုံးနိုင်ပါစေ။<br><br>
+
+            <b>Happy 1st Anniversary ပါ မောင့်ရဲ့ အချစ်ဆုံးလေး... 💖</b>
+        </p>
+
+        <!-- 10 Languages of Love Section -->
+        <div class="love-languages">
+            <h3>🌍 "မောင် မမကို အများကြီးချစ်တယ်" (ဘာသာစကား ၁၀ မျိုး) 🌍</h3>
+            
+            <div class="lang-item">
+                <div class="lang-name">1. English (အင်္ဂလိပ်)</div>
+                <div class="lang-text">I love you so much.</div>
+                <div class="lang-sub">(မောင် မမကို အရမ်းချစ်တယ်)</div>
+            </div>
+
+            <div class="lang-item">
+                <div class="lang-name">2. Chinese / Mandarin (တရုတ်)</div>
+                <div class="lang-text">我非常爱你 (Wǒ fēicháng ài nǐ)</div>
+                <div class="lang-sub">(မောင် မမကို အများကြီးချစ်တယ်)</div>
+            </div>
+
+            <div class="lang-item">
+                <div class="lang-name">3. Spanish (စပိန်)</div>
+                <div class="lang-text">Te amo muchísimo.</div>
+                <div class="lang-sub">(မောင် မမကို အများကြီးချစ်တယ်)</div>
+            </div>
+
+            <div class="lang-item">
+                <div class="lang-name">4. Hindi (ဟိန္ဒီ / အိန္ဒိယ)</div>
+                <div class="lang-text">मैं आपसे बहुत प्यार करता हूँ (Main aapse bahut pyar karta hoon)</div>
+                <div class="lang-sub">(မောင် မမကို အများကြီးချစ်တယ်)</div>
+            </div>
+
+            <div class="lang-item">
+                <div class="lang-name">5. French (ပြင်သစ်)</div>
+                <div class="lang-text">Je t'aime tellement.</div>
+                <div class="lang-sub">(မောင် မမကို အများကြီးချစ်တယ်)</div>
+            </div>
+
+            <div class="lang-item">
+                <div class="lang-name">6. Arabic (အာရပ်)</div>
+                <div class="lang-text">أحبك كثيراً (Uhibbuki katheeran)</div>
+                <div class="lang-sub">(မောင် မမကို အများကြီးချစ်တယ်)</div>
+            </div>
+
+            <div class="lang-item">
+                <div class="lang-name">7. Russian (ရုရှား)</div>
+                <div class="lang-text">Я тебя очень люблю (Ya tebya ochen lyublyu)</div>
+                <div class="lang-sub">(မောင် မမကို အများကြီးချစ်တယ်)</div>
+            </div>
+
+            <div class="lang-item">
+                <div class="lang-name">8. Portuguese (ပေါ်တူဂီ)</div>
+                <div class="lang-text">Eu te amo tanto.</div>
+                <div class="lang-sub">(မောင် မမကို အများကြီးချစ်တယ်)</div>
+            </div>
+
+            <div class="lang-item">
+                <div class="lang-name">9. Japanese (ဂျပန်)</div>
+                <div class="lang-text">あなたのことが大好きです (Anata no koto ga daisuki desu)</div>
+                <div class="lang-sub">(မောင် မမကို အများကြီး ချစ်တယ်)</div>
+            </div>
+
+            <div class="lang-item">
+                <div class="lang-name">10. Korean (ကိုရီးယား)</div>
+                <div class="lang-text">너무 사랑해요 (Neomu saranghaeyo)</div>
+                <div class="lang-sub">(မောင် မမကို အရမ်းချစ်တယ်)</div>
+            </div>
+
+            <div class="lang-item" style="border:none; margin-top:10px;">
+                <div class="lang-name">🇲🇲 Myanmar (မြန်မာ)</div>
+                <div class="lang-text">မောင် မမကို အများကြီးချစ်တယ် ❤️</div>
+            </div>
         </div>
     </div>
 
-    <div class="card result-box" id="resultCard">
-        <h1>Happy 11th Month Anniversary! 💕</h1>
-        <p>
-            ၁၅ ရက် ၉ လ ကနေ စခဲ့တဲ့ ငါတို့ရဲ့ အချစ်ရေးလေး အခုဆို (၁၁) လပြည့်ပြီနော်... 🌸<br><br>
-            မေးခွန်းလေးတွေ အကုန်မှန်အောင် ဖြေနိုင်လို့ ကျေးဇူးပါ မိန်းမရယ်။ ဒီအချိန်တွေအတွင်းမှာ အတူတူ ပျော်ခဲ့ရသလို၊ အဆင်မပြေတာလေးတွေရှိရင်လဲ နားလည်ပေးခဲ့လို့ ကျေးဇူးအများကြီးတင်ပါတယ်။ <br><br>
-            နောက်ဆုံး မေးခွန်းမှာ ဖြေခဲ့သလိုပဲ ငါတို့နှစ်ယောက် အနာဂတ်မှာ အတူတူ လက်ထပ်ပြီး အကြာကြီး လက်တွဲသွားကြမယ်နော်။ <br><br>
-            <b>I Love You So Much! 💖✨</b>
-        </p>
-    </div>
+    <footer>
+        <p>Made with ❤️ for You</p>
+    </footer>
+</div>
 
-    <script>
-        const quizData = [
-            {
-                question: "၁။ ငါတို့နှစ်ယောက် စတွဲခဲ့ကြတဲ့နေ့လေးက ဘယ်နေ့လဲ? 🗓️",
-                options: ["၁၅ ရက် ၈ လ", "၁၅ ရက် ၉ လ", "၁၆ ရက် ၉ လ", "၁၀ ရက် ၉ လ"],
-                correct: 1
-            },
-            {
-                question: "၂။ အခုဆိုရင် ငါတို့ အတူတူ ဖြတ်သန်းခဲ့တာ ဘာနေ့လေး ရောက်ပြီလဲ? 💖",
-                options: ["6 Months Anniversary", "1 Year Anniversary", "11 Months Anniversary", "10 Months Anniversary"],
-                correct: 2
-            },
-            {
-                question: "၃။ မင်း စိတ်ဆိုးရင်/ကောက်ရင် ငါ အဓိက လုပ်ပေးရမှာက ဘာလဲ? 🥺",
-                options: ["အကြောက်တရားနဲ့ ချော့ရမည်", "ပစ်ထားရမည်", "ပြန်ရန်ဖြစ်ရမည်", "မသိချင်ယောင် ဆောင်ရမည်"],
-                correct: 0
-            },
-            {
-                question: "၄။ ငါ့ကမ္ဘာမှာ အချစ်ရဆုံးနဲ့ အလှဆုံး ကောင်မလေးက ဘယ်သူလဲ? 👑",
-                options: ["နတ်သမီးလေး", "မင်း (မိန်းမ)", "သူများကောင်မလေး", "မသိပါဘူး"],
-                correct: 1
-            },
-            {
-                question: "၅။ ရှေ့ဆက်ပြီးတော့ရော ငါတို့နှစ်ယောက် ဘယ်လို သွားကြမလဲ? 👩‍❤️‍👨",
-                options: ["ခဏပဲ လက်တွဲမည်", "သေချာပေါက် အကြာကြီး လက်တွဲသွားမည်", "မသိတော့ဘူး", "လမ်းခွဲမည်"],
-                correct: 1
-            },
-            {
-                question: "၆။ နောက်ဆုံး မေးခွန်း... ငါတို့ အနာဂတ်မှာ အတူတူ လက်ထပ်ကြမှာလား? 💍✨",
-                options: ["လက်ထပ်မယ် ❤️", "မလက်ထပ်ဘူး 😜", "မသိသေးပါဘူး", "စဉ်းစားကြည့်ဦးမယ်"],
-                correct: 0
-            }
-        ];
-
-        let currentQuestion = 0;
-
-        function loadQuestion() {
-            const current = quizData[currentQuestion];
-            document.getElementById("progressText").innerText = `Question ${currentQuestion + 1} of ${quizData.length}`;
-            document.getElementById("questionText").innerText = current.question;
-            
-            const container = document.getElementById("optionsContainer");
-            container.innerHTML = "";
-
-            current.options.forEach((option, index) => {
-                const btn = document.createElement("button");
-                btn.classList.add("option-btn");
-                btn.innerText = option;
-                btn.onclick = () => checkAnswer(index);
-                container.appendChild(btn);
-            });
-        }
-
-        function checkAnswer(selectedIndex) {
-            if (selectedIndex === quizData[currentQuestion].correct) {
-                alert("အဖြေမှန်တယ်နော်! တော်လိုက်တာ ချစ်ရပါသော မိန်းမရယ် ❤️");
-                currentQuestion++;
-                if (currentQuestion < quizData.length) {
-                    loadQuestion();
-                } else {
-                    document.getElementById("quizCard").style.display = "none";
-                    document.getElementById("resultCard").style.display = "block";
-                }
-            } else {
-                alert("အဖြေမှားတယ်နော်! အသေအချာ ပြန်စဉ်းစားပြီး ဖြေပါဦး 😜");
-            }
-        }
-
-        loadQuestion();
-    </script>
 </body>
 </html>
-            
